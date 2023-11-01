@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const dashesElementMinSize = 10.0;
+const dashesMinSize = 10.0;
 const dashWidth = 5.0;
 const dashHeight = 1.0;
 
@@ -90,11 +90,11 @@ class _TrickyWidgetState extends State<TrickyWidget> {
   }
 
   Widget _dashes() {
-    if (_isCompact) return const SizedBox(width: dashesElementMinSize);
+    if (_isCompact) return const SizedBox(width: dashesMinSize);
     return Expanded(
       child: LayoutBuilder(builder: (_, constraints) {
         final width = constraints.maxWidth;
-        if (width <= dashesElementMinSize) {
+        if (width <= dashesMinSize) {
           if (!_isCompact) {
             WidgetsBinding.instance.addPostFrameCallback(
               (_) => setState(() {
@@ -102,7 +102,7 @@ class _TrickyWidgetState extends State<TrickyWidget> {
               }),
             );
           }
-          return const SizedBox(width: dashesElementMinSize);
+          return const SizedBox(width: dashesMinSize);
         }
         return _dottedLine(width);
       }),
