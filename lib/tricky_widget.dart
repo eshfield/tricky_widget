@@ -83,6 +83,11 @@ class _TrickyWidgetState extends State<TrickyWidget> {
     );
   }
 
+  bool _isTextOverflowed(double width) {
+    _textPainter.layout(maxWidth: width);
+    return _textPainter.didExceedMaxLines;
+  }
+
   Widget _dashes() {
     if (_isCompact) return const SizedBox(width: dashesElementMinSize);
     return Expanded(
@@ -103,13 +108,6 @@ class _TrickyWidgetState extends State<TrickyWidget> {
     );
   }
 
-  Widget _checkbox() {
-    return Checkbox(
-      value: _isChecked,
-      onChanged: _setCheckbox,
-    );
-  }
-
   Widget _dottedLine(double width) {
     final dashesCount = (width / (dashWidth * 2)).floor();
     return Row(
@@ -127,8 +125,10 @@ class _TrickyWidgetState extends State<TrickyWidget> {
     );
   }
 
-  bool _isTextOverflowed(double width) {
-    _textPainter.layout(maxWidth: width);
-    return _textPainter.didExceedMaxLines;
+  Widget _checkbox() {
+    return Checkbox(
+      value: _isChecked,
+      onChanged: _setCheckbox,
+    );
   }
 }
