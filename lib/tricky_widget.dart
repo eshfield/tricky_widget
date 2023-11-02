@@ -44,14 +44,6 @@ class _TrickyWidgetState extends State<TrickyWidget> {
     super.didChangeDependencies();
   }
 
-  void _setCheckbox(bool? value) {
-    if (value != null) {
-      setState(() {
-        _isChecked = value;
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -131,5 +123,13 @@ class _TrickyWidgetState extends State<TrickyWidget> {
       value: _isChecked,
       onChanged: _setCheckbox,
     );
+  }
+
+  void _setCheckbox(bool? value) {
+    if (value != null) {
+      setState(() {
+        _isChecked = value;
+      });
+    }
   }
 }
