@@ -31,8 +31,6 @@ class _TrickyWidgetState extends State<TrickyWidget> {
 
   @override
   void didChangeDependencies() {
-    // TextPainter инициализируется здесь, так как в initState() невозможно
-    // использовать InheritedWidget для получения стиля текста по умолчанию
     _textPainter = TextPainter(
       maxLines: 1,
       text: TextSpan(
