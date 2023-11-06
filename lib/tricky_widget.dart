@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 const dashesMinSize = 10.0;
 const dashWidth = 5.0;
 const dashHeight = 1.0;
+const dashColor = Colors.black;
 
 class TrickyWidget extends StatefulWidget {
   final String text;
@@ -109,7 +110,7 @@ class _TrickyWidgetState extends State<TrickyWidget> {
           return const SizedBox(
             width: dashWidth,
             height: dashHeight,
-            child: ColoredBox(color: Colors.black),
+            child: ColoredBox(color: dashColor),
           );
         },
       ),
