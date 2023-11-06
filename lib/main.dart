@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
         padding: EdgeInsets.all(16),
         child: Center(
           child: TrickyWidget(
-            text: 'Lorem Ipsum is simply dummy text of the typesetting',
+            text: 'My Beretta stirred nervously under my coat',
             isChecked: true,
           ),
         ),
