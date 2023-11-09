@@ -59,17 +59,13 @@ class _TrickyWidgetState extends State<TrickyWidget> {
     return Expanded(
       child: LayoutBuilder(
         builder: (_, constraints) {
-          if (_isCompact && !_isTextOverflowed(constraints.maxWidth)) {
+          final width = constraints.maxWidth;
+          if (!_isTextOverflowed(width - dashesMinSize)) {
             WidgetsBinding.instance.addPostFrameCallback(
-              (_) => setState(() {
-                _isCompact = false;
-              }),
+              (_) => setState(() => _isCompact = false),
             );
           }
-          return Text(
-            widget.text,
-            overflow: TextOverflow.ellipsis,
-          );
+          return Text(widget.text, overflow: TextOverflow.ellipsis);
         },
       ),
     );
@@ -86,14 +82,9 @@ class _TrickyWidgetState extends State<TrickyWidget> {
       child: LayoutBuilder(builder: (_, constraints) {
         final width = constraints.maxWidth;
         if (width <= dashesMinSize) {
-          if (!_isCompact) {
-            WidgetsBinding.instance.addPostFrameCallback(
-              (_) => setState(() {
-                _isCompact = true;
-              }),
-            );
-          }
-          return const SizedBox(width: dashesMinSize);
+          WidgetsBinding.instance.addPostFrameCallback(
+            (_) => setState(() => _isCompact = true),
+          );
         }
         return _dottedLine(width);
       }),
