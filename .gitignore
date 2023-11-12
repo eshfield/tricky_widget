@@ -32,5 +32,6 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-# Windows
+# Windows and Linux
 windows/
+linux/
