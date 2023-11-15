@@ -61,7 +61,7 @@ class _TrickyWidgetState extends State<TrickyWidget> {
       child: LayoutBuilder(
         builder: (_, constraints) {
           final width = constraints.maxWidth;
-          if (!_isTextOverflowed(width - dashesMinSize)) {
+          if (!_isTextOverflowed(width)) {
             WidgetsBinding.instance.addPostFrameCallback(
               (_) => setState(() => _isCompact = false),
             );
