@@ -20,8 +20,8 @@ class TrickyWidget extends StatefulWidget {
 }
 
 class _TrickyWidgetState extends State<TrickyWidget> {
-  var _isCompact = false;
   late bool _isChecked;
+  var _isCompact = false;
 
   @override
   void initState() {
@@ -117,9 +117,7 @@ class _TrickyWidgetState extends State<TrickyWidget> {
 
   void _setCheckbox(bool? value) {
     if (value != null) {
-      setState(() {
-        _isChecked = value;
-      });
+      setState(() => _isChecked = value);
     }
   }
 }

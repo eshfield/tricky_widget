@@ -83,9 +83,7 @@ class _TrickyWidgetState extends State<TrickyWidget> {
 
   void _setCheckbox(bool? value) {
     if (value != null) {
-      setState(() {
-        _isChecked = value;
-      });
+      setState(() => _isChecked = value);
     }
   }
 }
