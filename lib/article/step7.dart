@@ -65,7 +65,7 @@ class _TrickyWidgetState extends State<TrickyWidget> {
         style: DefaultTextStyle.of(context).style,
       ),
       textDirection: TextDirection.ltr,
-      textScaleFactor: MediaQuery.of(context).textScaleFactor,
+      textScaler: MediaQuery.of(context).textScaler,
     );
     textPainter.layout(maxWidth: width);
     return textPainter.didExceedMaxLines;
