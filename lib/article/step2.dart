@@ -24,8 +24,8 @@ class _TrickyWidgetState extends State<TrickyWidget> {
 
   @override
   void initState() {
-    _isChecked = widget.isChecked;
     super.initState();
+    _isChecked = widget.isChecked;
   }
 
   @override
